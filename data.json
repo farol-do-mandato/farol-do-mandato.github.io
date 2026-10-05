@@ -16,9 +16,9 @@
     { "id": "renda", "area": "Social", "nome": "Renda domiciliar per capita real" },
     { "id": "pobreza", "area": "Social", "nome": "Extrema pobreza (US$ 2,15 PPC/dia)" },
     { "id": "gini", "area": "Social", "nome": "Índice de Gini" },
-    { "id": "divida", "area": "Fiscal", "nome": "Dívida bruta / PIB", "peso": 2 },
-    { "id": "primario", "area": "Fiscal", "nome": "Resultado primário", "peso": 2 },
-    { "id": "juro", "area": "Fiscal", "nome": "Juro real 10 anos (NTN-B)", "peso": 2 },
+    { "id": "divida", "area": "Fiscal", "nome": "Dívida bruta / PIB" },
+    { "id": "primario", "area": "Fiscal", "nome": "Resultado primário" },
+    { "id": "juro", "area": "Fiscal", "nome": "Juro real 10 anos (NTN-B)" },
     { "id": "desmat", "area": "Ambiente", "nome": "Desmatamento na Amazônia" }
   ],
   "governos": [
@@ -28,7 +28,6 @@
       "periodo": "fim 2010 → fim 2014",
       "foto": "img/dilma.jpg",
       "credito": "Roberto Stuckert Filho/PR, atribuição",
-      "divida": [51.8, 56.3],
       "valores": {
         "mort_inf": { "antes": "~16", "sa": "M", "depois": "14,4", "sd": "M", "farol": "verde" },
         "expect": { "antes": "73,9", "sa": "M", "depois": "75,2", "sd": "M", "farol": "amarelo" },
@@ -56,7 +55,6 @@
       "periodo": "fim 2018 → fim 2022",
       "foto": "img/bolsonaro.jpg",
       "credito": "Isac Nóbrega/PR, CC BY 2.0",
-      "divida": [75.3, 71.7],
       "valores": {
         "mort_inf": { "antes": "12,4", "sa": "M", "depois": "12,9", "sd": "M", "farol": "amarelo" },
         "expect": { "antes": "76,3", "sa": "M", "depois": "75,5", "sd": "M", "farol": "amarelo" },
@@ -84,7 +82,6 @@
       "periodo": "fim 2022 → 2026 (em curso)",
       "foto": "img/lula.jpg",
       "credito": "Ricardo Stuckert/PR, CC BY 2.0",
-      "divida": [71.7, 82.9],
       "valores": {
         "mort_inf": { "antes": "12,9 (2022)", "sa": "M", "depois": "12,3 (2024)", "sd": "V", "farol": "amarelo" },
         "expect": { "antes": "75,5", "sa": "M", "depois": "76,6 (2024)", "sd": "V", "farol": "amarelo" },
