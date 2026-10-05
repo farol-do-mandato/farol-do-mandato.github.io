@@ -1,11 +1,114 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Farol do Mandato</title>
+  <meta name="description" content="18 indicadores, regras fixas, qualquer governo.">
+  <style>
+    :root {
+      --bg: #0d0f13; --surface: #161920; --line: #262a33;
+      --fg: #e7e9ee; --muted: #8f96a3;
+      --verde: #3fb950; --amarelo: #d6a734; --vermelho: #f0564d; --cinza: #5f6672;
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--fg);
+           font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    header, footer { max-width: 1180px; margin: 0 auto; padding: 40px 16px 24px; }
+    h1 { font-size: 2rem; margin: 0 0 4px; letter-spacing: -.02em; }
+    header p { margin: 0; }
+    header p, footer { color: var(--muted); }
+    .legenda { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 16px; font-size: .85rem; color: var(--muted); }
+    .scroll { overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 16px 40px; }
+    .board { display: grid; grid-template-columns: repeat(3, minmax(270px, 1fr)); gap: 14px;
+             max-width: 1148px; margin: 0 auto; }
+    .board > * { scroll-snap-align: start; scroll-margin-left: 16px; }
+    .pres { text-align: center; }
+    .pres img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 12%;
+                border-radius: 12px; display: block; background: var(--surface); }
+    .pres h2 { font-size: 1.25rem; margin: 12px 0 0; }
+    .pres .periodo { color: var(--muted); font-size: .9rem; }
+    .placar { display: flex; justify-content: center; gap: 12px; margin: 10px 0 6px; font-variant-numeric: tabular-nums; }
+    .nota { display: inline-block; padding: 3px 12px; border-radius: 999px; border: 1px solid var(--line);
+            font-weight: 600; }
+    .trava { font-size: .82rem; color: var(--muted); margin-top: 6px; }
+    .tile { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+    .tile h3 { margin: 0 0 8px; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+    .m { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; padding: 8px 0; border-top: 1px solid var(--line); }
+    .m:first-of-type { border-top: 0; padding-top: 0; }
+    .m .nome { font-weight: 550; }
+    .m .val { grid-column: 1; color: var(--muted); font-size: .88rem; }
+    .m .val b { color: var(--fg); font-weight: 500; }
+    .m .dot { grid-row: 1 / 3; grid-column: 2; align-self: center; }
+    .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; vertical-align: -1px; }
+    .verde { background: var(--verde); } .amarelo { background: var(--amarelo); }
+    .vermelho { background: var(--vermelho); } .cinza { background: var(--cinza); }
+    .mark { color: var(--amarelo); font-weight: 700; margin-left: 1px; }
+    .obs { font-style: italic; }
+    footer { padding-top: 0; font-size: .82rem; }
+  </style>
 </head>
 <body>
-  <h1>Hello world</h1>
+  <header>
+    <h1>Farol do Mandato</h1>
+    <p>18 indicadores, regras fixas, qualquer governo.</p>
+    <div class="legenda">
+      <span><i class="dot verde"></i> melhora ≥ 5%</span>
+      <span><i class="dot amarelo"></i> variação &lt; 5%</span>
+      <span><i class="dot vermelho"></i> piora ≥ 5%</span>
+      <span><i class="dot cinza"></i> sem dado comparável</span>
+      <span><span class="mark">†</span> valor de memória, a confirmar na fonte oficial</span>
+      <span><span class="mark">‡</span> cálculo próprio</span>
+    </div>
+  </header>
+  <div class="scroll"><main class="board" id="board"></main></div>
+  <footer id="creditos"></footer>
+  <script>
+    fetch('data.json').then(r => r.json()).then(d => {
+      const pontos = { verde: 1, amarelo: 0, vermelho: -1 };
+      const marca = s => (s || '').replace(/[^CM]/g, '').replace('C', '<span class="mark">‡</span>').replace('M', '<span class="mark">†</span>');
+      const cab = d.governos.map(g => {
+        const n = { verde: 0, amarelo: 0, vermelho: 0, cinza: 0 };
+        let saldo = 0, max = 0;
+        for (const m of d.metricas) {
+          const f = g.valores[m.id].farol;
+          n[f]++;
+          if (f !== 'cinza') {
+            saldo += pontos[f] * (m.peso || 1);
+            max += m.peso || 1;
+          }
+        }
+        const delta = g.divida[1] - g.divida[0];
+        let nota = 'Ruim';
+        if (saldo / max >= 0.5) nota = 'Bom';
+        else if (saldo >= 0) nota = 'Regular';
+        if (delta > 5 && nota === 'Bom') nota = 'Regular';
+        const pp = (delta > 0 ? '+' : '') + delta.toFixed(1).replace('.', ',') + ' p.p.';
+        return `<section class="pres">
+          <img src="${g.foto}" alt="Retrato oficial de ${g.nome}">
+          <h2>${g.mandato}</h2>
+          <div class="periodo">${g.periodo}</div>
+          <div class="placar">${Object.entries(n).map(([c, k]) => `<span><i class="dot ${c}"></i> ${k}</span>`).join('')}</div>
+          <span class="nota">${nota} · ${saldo >= 0 ? '+' : ''}${saldo} de ${max}</span>
+          <div class="trava">Trava fiscal ${delta > 5 ? '<b>acionada</b>' : 'não acionada'} (dívida ${pp})</div>
+        </section>`;
+      });
+      const tiles = d.areas.flatMap(a => d.governos.map(g => `<section class="tile">
+        <h3>${a}${a === 'Fiscal' ? ' · peso 2' : ''}</h3>
+        ${d.metricas.filter(m => m.area === a).map(m => {
+          const v = g.valores[m.id];
+          return `<div class="m">
+            <span class="nome">${v.nome || m.nome}</span>
+            <i class="dot ${v.farol}" role="img" aria-label="${v.farol}"></i>
+            <span class="val">${v.antes}${marca(v.sa)} → <b>${v.depois}</b>${marca(v.sd)}${v.obs ? ` <span class="obs">(${v.obs})</span>` : ''}</span>
+          </div>`;
+        }).join('')}
+      </section>`));
+      document.getElementById('board').innerHTML = cab.join('') + tiles.join('');
+      document.getElementById('creditos').innerHTML = `Dados levantados em ${d.levantamento}. Fotos oficiais via Wikimedia Commons: `
+        + d.governos.map(g => `${g.mandato} (${g.credito})`).join(' · ') + '.';
+    });
+  </script>
 </body>
 </html>
