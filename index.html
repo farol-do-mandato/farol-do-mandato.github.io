@@ -16,17 +16,16 @@
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--bg); color: var(--fg);
            font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
-    header { max-width: 1180px; margin: 0 auto; padding: 40px 16px 28px; }
-    .marca { display: flex; align-items: center; gap: 14px; }
+    header { max-width: 1180px; margin: 0 auto; padding: 40px 16px 28px; text-align: center; }
+    .marca { display: flex; align-items: center; justify-content: center; gap: 14px; text-align: left; }
     .marca img { width: 56px; height: 56px; }
     h1 { font-size: 2rem; margin: 0; letter-spacing: -.02em; }
     .sub { color: var(--muted); margin: 0; }
-    .sobre { max-width: 760px; margin: 20px 0 0; color: #c3c8d1; }
+    .sobre { max-width: 760px; margin: 20px auto 0; color: #c3c8d1; }
     .sobre p { margin: 0 0 10px; }
-    .legenda { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 14px; font-size: .85rem; color: var(--muted); }
+    .legenda { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin-top: 14px; font-size: .85rem; color: var(--muted); }
     .scroll { overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 16px 48px; }
-    .board { display: grid; grid-template-columns: repeat(3, minmax(270px, 1fr)); gap: 14px;
-             max-width: 1148px; margin: 0 auto; }
+    .board { display: grid; gap: 14px; width: max-content; margin: 0 auto; }
     .board > * { scroll-snap-align: start; scroll-margin-left: 16px; }
     .pres { text-align: center; padding-bottom: 4px; }
     .foto img { width: 132px; height: 132px; border-radius: 50%; object-fit: cover; object-position: 50% 18%;
@@ -64,9 +63,11 @@
     <div class="sobre">
       <p>Cada coluna é um mandato presidencial. Para cada um, comparamos 18 indicadores de fontes oficiais
         (IBGE, Banco Central, INEP, INPE, DATASUS e outras) entre o fim do ano anterior à posse e o fim do mandato.
-        As métricas e as regras foram fixadas antes de olhar os resultados e valem igualmente para os três governos.</p>
+        As métricas e as regras foram fixadas antes de olhar os resultados e valem igualmente para todos os governos, de FHC a Lula 3.</p>
       <p>A cor mostra o que aconteceu com cada indicador no período. Para a inflação, conta a distância até o centro
-        da meta. O mandato de Lula 3 está em curso, então alguns valores ainda são de 2024 ou 2025.
+        da meta. Cada ano conta para quem governou a maior parte dele: Dilma 2 vai até o fim de 2015 e Temer começa em 2016.
+        Nos mandatos mais antigos, várias séries ainda não existiam e aparecem em cinza. O mandato de Lula 3 está
+        em curso, então alguns valores ainda são de 2024 ou 2025. Role para o lado para ver todos os mandatos.
         <span id="data"></span></p>
     </div>
     <div class="legenda">
@@ -105,7 +106,9 @@
           </div>`;
         }).join('')}
       </section>`));
-      document.getElementById('board').innerHTML = cab.join('') + tiles.join('');
+      const board = document.getElementById('board');
+      board.style.gridTemplateColumns = `repeat(${d.governos.length}, 260px)`;
+      board.innerHTML = cab.join('') + tiles.join('');
       document.getElementById('data').textContent = `Dados levantados em ${d.levantamento}.`;
     });
   </script>
