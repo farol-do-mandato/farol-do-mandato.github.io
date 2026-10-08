@@ -1,1282 +1,1461 @@
 {
-  "levantamento": "05/10/2026",
-  "areas": [
-    "Saúde",
-    "Educação",
-    "Segurança",
-    "Economia",
-    "Social",
-    "Fiscal",
-    "Ambiente"
-  ],
-  "metricas": [
+ "levantamento": "08/10/2026",
+ "areas": [
+  "Saúde",
+  "Educação",
+  "Segurança",
+  "Economia",
+  "Social",
+  "Fiscal",
+  "Ambiente"
+ ],
+ "metricas": [
+  {
+   "id": "mort_inf",
+   "area": "Saúde",
+   "nome": "Mortalidade infantil (/mil nascidos vivos)",
+   "fonte": "Estimativa harmonizada da ONU (UN IGME), publicada pelo Banco Mundial.",
+   "links": [
     {
-      "id": "mort_inf",
-      "area": "Saúde",
-      "nome": "Mortalidade infantil (/mil nascidos vivos)"
-    },
-    {
-      "id": "expect",
-      "area": "Saúde",
-      "nome": "Expectativa de vida"
-    },
-    {
-      "id": "triplice",
-      "area": "Saúde",
-      "nome": "Tríplice viral, 1ª dose"
-    },
-    {
-      "id": "ideb",
-      "area": "Educação",
-      "nome": "IDEB (iniciais / finais / médio)"
-    },
-    {
-      "id": "mortes_viol",
-      "area": "Segurança",
-      "nome": "Mortes violentas /100 mil"
-    },
-    {
-      "id": "policia",
-      "area": "Segurança",
-      "nome": "Mortes causadas pela polícia"
-    },
-    {
-      "id": "desemprego",
-      "area": "Economia",
-      "nome": "Desemprego"
-    },
-    {
-      "id": "informalidade",
-      "area": "Economia",
-      "nome": "Informalidade"
-    },
-    {
-      "id": "pib_pc",
-      "area": "Economia",
-      "nome": "PIB per capita real"
-    },
-    {
-      "id": "ipca",
-      "area": "Economia",
-      "nome": "Distância do IPCA até o centro da meta"
-    },
-    {
-      "id": "fbcf",
-      "area": "Economia",
-      "nome": "Investimento / PIB"
-    },
-    {
-      "id": "renda",
-      "area": "Social",
-      "nome": "Renda domiciliar per capita real"
-    },
-    {
-      "id": "pobreza",
-      "area": "Social",
-      "nome": "Extrema pobreza (US$ 2,15 PPC/dia)"
-    },
-    {
-      "id": "gini",
-      "area": "Social",
-      "nome": "Índice de Gini"
-    },
-    {
-      "id": "divida",
-      "area": "Fiscal",
-      "nome": "Dívida bruta / PIB"
-    },
-    {
-      "id": "primario",
-      "area": "Fiscal",
-      "nome": "Resultado primário"
-    },
-    {
-      "id": "juro",
-      "area": "Fiscal",
-      "nome": "Juro real 10 anos (NTN-B)"
-    },
-    {
-      "id": "desmat",
-      "area": "Ambiente",
-      "nome": "Desmatamento na Amazônia"
+     "rotulo": "UN IGME via Banco Mundial",
+     "url": "https://data.worldbank.org/indicator/SP.DYN.IMRT.IN?locations=BR"
     }
-  ],
-  "governos": [
+   ],
+   "nota": "O IBGE tem números próprios nas tábuas de mortalidade, com níveis um pouco diferentes."
+  },
+  {
+   "id": "expect",
+   "area": "Saúde",
+   "nome": "Expectativa de vida (anos)",
+   "fonte": "Estimativa da ONU (World Population Prospects), publicada pelo Banco Mundial.",
+   "links": [
     {
-      "nome": "Fernando Henrique Cardoso",
-      "mandato": "FHC 1",
-      "periodo": "fim 1994 → fim 1998",
-      "foto": "img/fhc.jpg",
-      "credito": "Agência Brasil, CC BY 3.0 BR",
-      "valores": {
-        "mort_inf": {
-          "antes": "~38",
-          "sa": "M",
-          "depois": "~32",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "expect": {
-          "antes": "~68,0",
-          "sa": "M",
-          "depois": "~69,3",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "triplice": {
-          "antes": "vacina implantada aos poucos até 2000",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "ideb": {
-          "antes": "IDEB criado em 2005",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "mortes_viol": {
-          "antes": "~21",
-          "sa": "M",
-          "depois": "~25,9",
-          "sd": "M",
-          "farol": "vermelho",
-          "nome": "Homicídios /100 mil"
-        },
-        "policia": {
-          "antes": "série nacional só começa em 2013",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "desemprego": {
-          "antes": "~5,1%",
-          "sa": "M",
-          "depois": "~7,6%",
-          "sd": "M",
-          "farol": "vermelho",
-          "nome": "Desemprego (PME antiga, 6 metrópoles, média anual)"
-        },
-        "informalidade": {
-          "antes": "série oficial começa no fim de 2015",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "pib_pc": {
-          "antes": "base",
-          "depois": "≈ +4%",
-          "sd": "CM",
-          "farol": "amarelo"
-        },
-        "ipca": {
-          "antes": "regime de metas começa em 1999",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "fbcf": {
-          "antes": "~20,7%",
-          "sa": "M",
-          "depois": "~17,0%",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "renda": {
-          "antes": "1993 (não houve PNAD em 1994)",
-          "depois": "≈ +30% real",
-          "sd": "CM",
-          "farol": "verde",
-          "nome": "Renda domiciliar per capita real (PNAD anual)"
-        },
-        "pobreza": {
-          "antes": "série do IBGE começa em 2012",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "gini": {
-          "antes": "0,604 (1993)",
-          "sa": "M",
-          "depois": "0,600",
-          "sd": "M",
-          "farol": "amarelo",
-          "nome": "Índice de Gini (PNAD anual)"
-        },
-        "divida": {
-          "antes": "série atual do BC começa em 2006",
-          "depois": "—",
-          "farol": "cinza",
-          "obs": "dívida líquida: ~30% → ~39% do PIB"
-        },
-        "primario": {
-          "antes": "superávit ~5,2%",
-          "sa": "M",
-          "depois": "superávit ~0,0%",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "juro": {
-          "antes": "NTN-B só começa a ser emitida em 2000",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "desmat": {
-          "antes": "14.896 km²",
-          "sa": "M",
-          "depois": "17.383 km²",
-          "sd": "M",
-          "farol": "vermelho"
-        }
-      }
-    },
-    {
-      "nome": "Fernando Henrique Cardoso",
-      "mandato": "FHC 2",
-      "periodo": "fim 1998 → fim 2002",
-      "foto": "img/fhc.jpg",
-      "credito": "Agência Brasil, CC BY 3.0 BR",
-      "valores": {
-        "mort_inf": {
-          "antes": "~32",
-          "sa": "M",
-          "depois": "~26",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "expect": {
-          "antes": "~69,3",
-          "sa": "M",
-          "depois": "~71,0",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "triplice": {
-          "antes": "vacina implantada aos poucos até 2000",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "ideb": {
-          "antes": "IDEB criado em 2005",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "mortes_viol": {
-          "antes": "~25,9",
-          "sa": "M",
-          "depois": "~28,5",
-          "sd": "M",
-          "farol": "vermelho",
-          "nome": "Homicídios /100 mil"
-        },
-        "policia": {
-          "antes": "série nacional só começa em 2013",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "desemprego": {
-          "antes": "~7,6%",
-          "sa": "M",
-          "depois": "~7,1%",
-          "sd": "M",
-          "farol": "verde",
-          "nome": "Desemprego (PME antiga, 6 metrópoles, média anual)"
-        },
-        "informalidade": {
-          "antes": "série oficial começa no fim de 2015",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "pib_pc": {
-          "antes": "base",
-          "depois": "≈ +4%",
-          "sd": "CM",
-          "farol": "amarelo"
-        },
-        "ipca": {
-          "antes": "sem meta em 1998",
-          "depois": "—",
-          "farol": "cinza",
-          "obs": "em 2002: 12,53% contra meta de 3,5%"
-        },
-        "fbcf": {
-          "antes": "~17,0%",
-          "sa": "M",
-          "depois": "~16,4%",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "renda": {
-          "antes": "base 1998",
-          "depois": "≈ −5% real",
-          "sd": "CM",
-          "farol": "vermelho",
-          "nome": "Renda domiciliar per capita real (PNAD anual)",
-          "obs": "no limiar"
-        },
-        "pobreza": {
-          "antes": "série do IBGE começa em 2012",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "gini": {
-          "antes": "0,600",
-          "sa": "M",
-          "depois": "0,589",
-          "sd": "M",
-          "farol": "amarelo",
-          "nome": "Índice de Gini (PNAD anual)"
-        },
-        "divida": {
-          "antes": "série atual do BC começa em 2006",
-          "depois": "—",
-          "farol": "cinza",
-          "obs": "dívida líquida: ~39% → ~60% do PIB"
-        },
-        "primario": {
-          "antes": "superávit ~0,0%",
-          "sa": "M",
-          "depois": "superávit ~3,2%",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "juro": {
-          "antes": "NTN-B só começa a ser emitida em 2000",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "desmat": {
-          "antes": "17.383 km²",
-          "sa": "M",
-          "depois": "21.651 km²",
-          "sd": "M",
-          "farol": "vermelho"
-        }
-      }
-    },
-    {
-      "nome": "Luiz Inácio Lula da Silva",
-      "mandato": "Lula 1",
-      "periodo": "fim 2002 → fim 2006",
-      "foto": "img/lula1.jpg",
-      "credito": "Lula Oficial, CC BY-SA 4.0",
-      "valores": {
-        "mort_inf": {
-          "antes": "~26",
-          "sa": "M",
-          "depois": "~21",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "expect": {
-          "antes": "~71,0",
-          "sa": "M",
-          "depois": "~72,4",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "triplice": {
-          "antes": "~97%",
-          "sa": "M",
-          "depois": "acima de 100% (no teto)",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "ideb": {
-          "antes": "IDEB criado em 2005",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "mortes_viol": {
-          "antes": "~28,5",
-          "sa": "M",
-          "depois": "~26,6",
-          "sd": "M",
-          "farol": "verde",
-          "nome": "Homicídios /100 mil"
-        },
-        "policia": {
-          "antes": "série nacional só começa em 2013",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "desemprego": {
-          "antes": "~11,7% (2002, nova PME)",
-          "sa": "M",
-          "depois": "~10,0%",
-          "sd": "M",
-          "farol": "verde",
-          "nome": "Desemprego (PME, 6 metrópoles, média anual)"
-        },
-        "informalidade": {
-          "antes": "série oficial começa no fim de 2015",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "pib_pc": {
-          "antes": "base",
-          "depois": "≈ +9%",
-          "sd": "CM",
-          "farol": "verde"
-        },
-        "ipca": {
-          "antes": "12,53% − 3,5 = +9,0 p.p.",
-          "sa": "M",
-          "depois": "3,14% − 4,5 = 1,4 p.p. abaixo",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "fbcf": {
-          "antes": "~16,4%",
-          "sa": "M",
-          "depois": "~17,2%",
-          "sd": "M",
-          "farol": "amarelo",
-          "obs": "no limiar"
-        },
-        "renda": {
-          "antes": "base 2002",
-          "depois": "≈ +10% real",
-          "sd": "CM",
-          "farol": "verde",
-          "nome": "Renda domiciliar per capita real (PNAD anual)"
-        },
-        "pobreza": {
-          "antes": "série do IBGE começa em 2012",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "gini": {
-          "antes": "0,589",
-          "sa": "M",
-          "depois": "0,563",
-          "sd": "M",
-          "farol": "amarelo",
-          "nome": "Índice de Gini (PNAD anual)"
-        },
-        "divida": {
-          "antes": "série atual do BC começa em 2006",
-          "depois": "—",
-          "farol": "cinza",
-          "obs": "dívida líquida: ~60% → ~47% do PIB"
-        },
-        "primario": {
-          "antes": "superávit ~3,2%",
-          "sa": "M",
-          "depois": "superávit ~3,2%",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "juro": {
-          "antes": "NTN-B longa pouco negociada antes de 2005",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "desmat": {
-          "antes": "21.651 km²",
-          "sa": "M",
-          "depois": "14.286 km²",
-          "sd": "M",
-          "farol": "verde"
-        }
-      }
-    },
-    {
-      "nome": "Luiz Inácio Lula da Silva",
-      "mandato": "Lula 2",
-      "periodo": "fim 2006 → fim 2010",
-      "foto": "img/lula2.jpg",
-      "credito": "Ricardo Stuckert/PR, CC BY 3.0 BR",
-      "valores": {
-        "mort_inf": {
-          "antes": "~21",
-          "sa": "M",
-          "depois": "~16",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "expect": {
-          "antes": "~72,4",
-          "sa": "M",
-          "depois": "73,9",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "triplice": {
-          "antes": "acima de 100% (no teto)",
-          "sa": "M",
-          "depois": "~100%",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "ideb": {
-          "antes": "3,8 / 3,5 / 3,4 (2005)",
-          "sa": "M",
-          "depois": "4,6 / 4,0 / 3,6 (2009)",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "mortes_viol": {
-          "antes": "~26,6",
-          "sa": "M",
-          "depois": "27,8",
-          "sd": "V",
-          "farol": "amarelo",
-          "nome": "Homicídios /100 mil",
-          "obs": "+4,5%, no limiar"
-        },
-        "policia": {
-          "antes": "série nacional só começa em 2013",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "desemprego": {
-          "antes": "~10,0%",
-          "sa": "M",
-          "depois": "6,7%",
-          "sd": "M",
-          "farol": "verde",
-          "nome": "Desemprego (PME, 6 metrópoles, média anual)"
-        },
-        "informalidade": {
-          "antes": "série oficial começa no fim de 2015",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "pib_pc": {
-          "antes": "base",
-          "depois": "≈ +15%",
-          "sd": "CM",
-          "farol": "verde"
-        },
-        "ipca": {
-          "antes": "3,14% − 4,5 = 1,4 p.p. abaixo",
-          "sa": "M",
-          "depois": "5,91% − 4,5 = +1,4 p.p.",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "fbcf": {
-          "antes": "~17,2%",
-          "sa": "M",
-          "depois": "20,5%",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "renda": {
-          "antes": "base 2006",
-          "depois": "≈ +9% real (até 2009; não houve PNAD em 2010)",
-          "sd": "CM",
-          "farol": "verde",
-          "nome": "Renda domiciliar per capita real (PNAD anual)"
-        },
-        "pobreza": {
-          "antes": "série do IBGE começa em 2012",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "gini": {
-          "antes": "0,563",
-          "sa": "M",
-          "depois": "0,543 (2009)",
-          "sd": "M",
-          "farol": "amarelo",
-          "nome": "Índice de Gini (PNAD anual)"
-        },
-        "divida": {
-          "antes": "~55,5%",
-          "sa": "M",
-          "depois": "51,8%",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "primario": {
-          "antes": "superávit ~3,2%",
-          "sa": "M",
-          "depois": "superávit 2,6%",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "juro": {
-          "antes": "~7%",
-          "sa": "M",
-          "depois": "~6%",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "desmat": {
-          "antes": "14.286 km²",
-          "sa": "M",
-          "depois": "7.000 km²",
-          "sd": "M",
-          "farol": "verde"
-        }
-      }
-    },
-    {
-      "nome": "Dilma Rousseff",
-      "mandato": "Dilma 1",
-      "periodo": "fim 2010 → fim 2014",
-      "foto": "img/dilma.jpg",
-      "credito": "Roberto Stuckert Filho/PR, atribuição",
-      "valores": {
-        "mort_inf": {
-          "antes": "~16",
-          "sa": "M",
-          "depois": "14,4",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "expect": {
-          "antes": "73,9",
-          "sa": "M",
-          "depois": "75,2",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "triplice": {
-          "antes": "~100%",
-          "sa": "M",
-          "depois": "~100% (já no teto)",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "ideb": {
-          "antes": "4,6 / 4,0 / 3,6 (2009)",
-          "sa": "M",
-          "depois": "5,2 / 4,2 / 3,7 (2013)",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "mortes_viol": {
-          "nome": "Homicídios /100 mil",
-          "antes": "27,8",
-          "sa": "V",
-          "depois": "29,8 (recorde até então)",
-          "sd": "V",
-          "farol": "vermelho"
-        },
-        "policia": {
-          "antes": "série nacional só começa em 2013",
-          "depois": "3.022 (2014)",
-          "sd": "V",
-          "farol": "cinza"
-        },
-        "desemprego": {
-          "nome": "Desemprego (PME, 6 metrópoles, média anual)",
-          "antes": "6,7%",
-          "sa": "M",
-          "depois": "4,8%",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "informalidade": {
-          "antes": "série oficial começa depois",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "pib_pc": {
-          "antes": "base",
-          "depois": "≈ +6%",
-          "sd": "CM",
-          "farol": "verde"
-        },
-        "ipca": {
-          "antes": "5,91% − 4,5 = +1,4 p.p.",
-          "sa": "M",
-          "depois": "6,41% − 4,5 = +1,9 p.p.",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "fbcf": {
-          "antes": "20,5%",
-          "sa": "M",
-          "depois": "19,9%",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "renda": {
-          "antes": "2012 (início da série)",
-          "depois": "≈ +8% real (2012→2014)",
-          "sd": "C",
-          "farol": "verde"
-        },
-        "pobreza": {
-          "antes": "6,6% (2012)",
-          "sa": "V",
-          "depois": "5,2% (2014)",
-          "sd": "V",
-          "farol": "verde"
-        },
-        "gini": {
-          "antes": "0,540 (2012)",
-          "sa": "M",
-          "depois": "0,526",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "divida": {
-          "antes": "51,8%",
-          "sa": "M",
-          "depois": "56,3%",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "primario": {
-          "antes": "superávit 2,6%",
-          "sa": "M",
-          "depois": "déficit 0,6%",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "juro": {
-          "antes": "~6%",
-          "sa": "M",
-          "depois": "~6%",
-          "sd": "M",
-          "farol": "amarelo",
-          "obs": "no limiar"
-        },
-        "desmat": {
-          "antes": "7.000 km²",
-          "sa": "M",
-          "depois": "5.012 km²",
-          "sd": "M",
-          "farol": "verde"
-        }
-      }
-    },
-    {
-      "nome": "Dilma Rousseff",
-      "mandato": "Dilma 2",
-      "periodo": "fim 2014 → fim 2015 (afastada em mai/2016)",
-      "foto": "img/dilma.jpg",
-      "credito": "Roberto Stuckert Filho/PR, atribuição",
-      "valores": {
-        "mort_inf": {
-          "antes": "14,4",
-          "sa": "M",
-          "depois": "~13,8",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "expect": {
-          "antes": "75,2",
-          "sa": "M",
-          "depois": "~75,5",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "triplice": {
-          "antes": "~100%",
-          "sa": "M",
-          "depois": "~96%",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "ideb": {
-          "antes": "5,2 / 4,2 / 3,7 (2013)",
-          "sa": "M",
-          "depois": "5,5 / 4,5 / 3,7 (2015)",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "mortes_viol": {
-          "antes": "29,8",
-          "sa": "V",
-          "depois": "~28,9",
-          "sd": "M",
-          "farol": "amarelo",
-          "nome": "Homicídios /100 mil"
-        },
-        "policia": {
-          "antes": "3.022",
-          "sa": "V",
-          "depois": "~3.345",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "desemprego": {
-          "antes": "6,5% (4º tri)",
-          "sa": "M",
-          "depois": "8,9% (4º tri)",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "informalidade": {
-          "antes": "série oficial começa no fim de 2015",
-          "depois": "—",
-          "farol": "cinza"
-        },
-        "pib_pc": {
-          "antes": "base",
-          "depois": "≈ −4%",
-          "sd": "CM",
-          "farol": "amarelo",
-          "obs": "no limiar"
-        },
-        "ipca": {
-          "antes": "6,41% − 4,5 = +1,9 p.p.",
-          "sa": "M",
-          "depois": "10,67% − 4,5 = +6,2 p.p.",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "fbcf": {
-          "antes": "19,9%",
-          "sa": "M",
-          "depois": "~17,8%",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "renda": {
-          "antes": "base 2014",
-          "depois": "≈ −3% real",
-          "sd": "CM",
-          "farol": "amarelo"
-        },
-        "pobreza": {
-          "antes": "5,2%",
-          "sa": "V",
-          "depois": "~5,6%",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "gini": {
-          "antes": "0,526",
-          "sa": "M",
-          "depois": "~0,524",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "divida": {
-          "antes": "56,3%",
-          "sa": "M",
-          "depois": "~65,5%",
-          "sd": "M",
-          "farol": "vermelho",
-          "obs": "+9,2 p.p."
-        },
-        "primario": {
-          "antes": "déficit 0,6%",
-          "sa": "M",
-          "depois": "déficit ~1,9%",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "juro": {
-          "antes": "~6%",
-          "sa": "M",
-          "depois": "~7,3%",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "desmat": {
-          "antes": "5.012 km²",
-          "sa": "M",
-          "depois": "6.207 km²",
-          "sd": "M",
-          "farol": "vermelho"
-        }
-      }
-    },
-    {
-      "nome": "Michel Temer",
-      "mandato": "Temer",
-      "periodo": "fim 2015 → fim 2018 (posse em mai/2016)",
-      "foto": "img/temer.jpg",
-      "credito": "Beto Barata/PR, CC BY 2.0",
-      "valores": {
-        "mort_inf": {
-          "antes": "~13,8",
-          "sa": "M",
-          "depois": "12,4",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "expect": {
-          "antes": "~75,5",
-          "sa": "M",
-          "depois": "76,3",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "triplice": {
-          "antes": "~96%",
-          "sa": "M",
-          "depois": "~92%",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "ideb": {
-          "antes": "5,5 / 4,5 / 3,7 (2015)",
-          "sa": "M",
-          "depois": "5,8 / 4,7 / 3,8 (2017)",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "mortes_viol": {
-          "antes": "~28,6",
-          "sa": "M",
-          "depois": "27,5",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "policia": {
-          "antes": "~3.345",
-          "sa": "M",
-          "depois": "6.220",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "desemprego": {
-          "antes": "8,9% (4º tri)",
-          "sa": "M",
-          "depois": "11,6% (4º tri)",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "informalidade": {
-          "antes": "~39% (4º tri 2015)",
-          "sa": "M",
-          "depois": "~41%",
-          "sd": "M",
-          "farol": "vermelho",
-          "obs": "no limiar"
-        },
-        "pib_pc": {
-          "antes": "base",
-          "depois": "≈ −3%",
-          "sd": "CM",
-          "farol": "amarelo"
-        },
-        "ipca": {
-          "antes": "10,67% − 4,5 = +6,2 p.p.",
-          "sa": "M",
-          "depois": "3,75% − 4,5 = 0,75 p.p. abaixo",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "fbcf": {
-          "antes": "~17,8%",
-          "sa": "M",
-          "depois": "~16,4%",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "renda": {
-          "antes": "base 2015",
-          "depois": "≈ +4% real",
-          "sd": "CM",
-          "farol": "amarelo"
-        },
-        "pobreza": {
-          "antes": "~5,6%",
-          "sa": "M",
-          "depois": "~6,5%",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "gini": {
-          "antes": "~0,524",
-          "sa": "M",
-          "depois": "0,545",
-          "sd": "V",
-          "farol": "amarelo"
-        },
-        "divida": {
-          "antes": "~65,5%",
-          "sa": "M",
-          "depois": "75,3%",
-          "sd": "M",
-          "farol": "vermelho",
-          "obs": "+9,8 p.p."
-        },
-        "primario": {
-          "antes": "déficit ~1,9%",
-          "sa": "M",
-          "depois": "déficit 1,6%",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "juro": {
-          "antes": "~7,3%",
-          "sa": "M",
-          "depois": "~4,7%",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "desmat": {
-          "antes": "6.207 km²",
-          "sa": "M",
-          "depois": "7.536 km²",
-          "sd": "M",
-          "farol": "vermelho"
-        }
-      }
-    },
-    {
-      "nome": "Jair Bolsonaro",
-      "mandato": "Bolsonaro",
-      "periodo": "fim 2018 → fim 2022",
-      "foto": "img/bolsonaro.jpg",
-      "credito": "Isac Nóbrega/PR, CC BY 2.0",
-      "valores": {
-        "mort_inf": {
-          "antes": "12,4",
-          "sa": "M",
-          "depois": "12,9",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "expect": {
-          "antes": "76,3",
-          "sa": "M",
-          "depois": "75,5",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "triplice": {
-          "antes": "~92% (93% em 2019 verificado)",
-          "sa": "M",
-          "depois": "~80%",
-          "sd": "V",
-          "farol": "vermelho"
-        },
-        "ideb": {
-          "antes": "5,8 / 4,7 / 3,8 (2017)",
-          "sa": "M",
-          "depois": "5,8 / 5,1 / 4,2 (2021)",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "mortes_viol": {
-          "antes": "27,5",
-          "sa": "M",
-          "depois": "23,3",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "policia": {
-          "antes": "6.220",
-          "sa": "M",
-          "depois": "6.429",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "desemprego": {
-          "antes": "11,6% (4º tri)",
-          "sa": "M",
-          "depois": "7,9% (4º tri)",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "informalidade": {
-          "antes": "~41%",
-          "sa": "M",
-          "depois": "~38,9%",
-          "sd": "M",
-          "farol": "verde",
-          "obs": "no limiar"
-        },
-        "pib_pc": {
-          "antes": "base",
-          "depois": "≈ +3%",
-          "sd": "CM",
-          "farol": "amarelo"
-        },
-        "ipca": {
-          "antes": "3,75% − 4,5 = 0,75 p.p. abaixo",
-          "sa": "M",
-          "depois": "5,79% − 3,5 = +2,3 p.p.",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "fbcf": {
-          "antes": "~16,4%",
-          "sa": "M",
-          "depois": "~17,8%",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "renda": {
-          "antes": "—",
-          "depois": "método do IBGE diferente em 2020–2022",
-          "farol": "cinza"
-        },
-        "pobreza": {
-          "antes": "~6,5%",
-          "sa": "M",
-          "depois": "5,9%",
-          "sd": "V",
-          "farol": "verde"
-        },
-        "gini": {
-          "antes": "0,545",
-          "sa": "V",
-          "depois": "0,518",
-          "sd": "V",
-          "farol": "amarelo",
-          "obs": "−4,95%, no limiar"
-        },
-        "divida": {
-          "antes": "75,3%",
-          "sa": "M",
-          "depois": "71,7%",
-          "sd": "M",
-          "farol": "amarelo"
-        },
-        "primario": {
-          "antes": "déficit 1,6%",
-          "sa": "M",
-          "depois": "superávit 1,2%",
-          "sd": "M",
-          "farol": "verde"
-        },
-        "juro": {
-          "antes": "~4,7%",
-          "sa": "M",
-          "depois": "~6,2%",
-          "sd": "M",
-          "farol": "vermelho"
-        },
-        "desmat": {
-          "antes": "7.536 km²",
-          "sa": "M",
-          "depois": "11.594 km²",
-          "sd": "V",
-          "farol": "vermelho"
-        }
-      }
-    },
-    {
-      "nome": "Luiz Inácio Lula da Silva",
-      "mandato": "Lula 3",
-      "periodo": "fim 2022 → 2026 (em curso)",
-      "foto": "img/lula.jpg",
-      "credito": "Ricardo Stuckert/PR, CC BY 2.0",
-      "valores": {
-        "mort_inf": {
-          "antes": "12,9 (2022)",
-          "sa": "M",
-          "depois": "12,3 (2024)",
-          "sd": "V",
-          "farol": "amarelo"
-        },
-        "expect": {
-          "antes": "75,5",
-          "sa": "M",
-          "depois": "76,6 (2024)",
-          "sd": "V",
-          "farol": "amarelo"
-        },
-        "triplice": {
-          "antes": "~80%",
-          "sa": "V",
-          "depois": "92,9% (2025)",
-          "sd": "V",
-          "farol": "verde"
-        },
-        "ideb": {
-          "antes": "5,8 / 5,1 / 4,2 (2021)",
-          "sa": "M",
-          "depois": "6,3 / 5,3 / 4,5 (2025)",
-          "sd": "V",
-          "farol": "verde"
-        },
-        "mortes_viol": {
-          "antes": "23,3",
-          "sa": "M",
-          "depois": "19,1 (2025)",
-          "sd": "V",
-          "farol": "verde"
-        },
-        "policia": {
-          "antes": "6.429",
-          "sa": "M",
-          "depois": "6.602 (2025)",
-          "sd": "V",
-          "farol": "amarelo"
-        },
-        "desemprego": {
-          "antes": "7,9% (4º tri 2022)",
-          "sa": "M",
-          "depois": "5,3% (tri até jul/2026)",
-          "sd": "V",
-          "farol": "verde"
-        },
-        "informalidade": {
-          "antes": "~38,9%",
-          "sa": "M",
-          "depois": "37,5%",
-          "sd": "V",
-          "farol": "amarelo"
-        },
-        "pib_pc": {
-          "antes": "base",
-          "depois": "≈ +7 a 8% (2023–2025)",
-          "sd": "C",
-          "farol": "verde"
-        },
-        "ipca": {
-          "antes": "5,79% − 3,5 = +2,3 p.p.",
-          "sa": "M",
-          "depois": "4,22% − 3,0 = +1,2 p.p. (12m até ago/2026)",
-          "sd": "V",
-          "farol": "verde"
-        },
-        "fbcf": {
-          "antes": "~17,8%",
-          "sa": "M",
-          "depois": "16,8% (2025)",
-          "sd": "V",
-          "farol": "vermelho"
-        },
-        "renda": {
-          "nome": "Renda domiciliar per capita real (R$ de 2025)",
-          "antes": "R$ 1.809",
-          "sa": "V",
-          "depois": "R$ 2.264 (2025)",
-          "sd": "V",
-          "farol": "verde"
-        },
-        "pobreza": {
-          "antes": "5,9%",
-          "sa": "V",
-          "depois": "3,5% (2024)",
-          "sd": "V",
-          "farol": "verde"
-        },
-        "gini": {
-          "antes": "0,518",
-          "sa": "V",
-          "depois": "0,511 (2025)",
-          "sd": "V",
-          "farol": "amarelo"
-        },
-        "divida": {
-          "antes": "71,7%",
-          "sa": "M",
-          "depois": "82,9% (ago/2026)",
-          "sd": "V",
-          "farol": "vermelho"
-        },
-        "primario": {
-          "antes": "superávit ~1,2%",
-          "sa": "M",
-          "depois": "déficit 0,62% (12m)",
-          "sd": "V",
-          "farol": "vermelho"
-        },
-        "juro": {
-          "antes": "~6,2%",
-          "sa": "M",
-          "depois": "7 a 8%",
-          "sd": "V",
-          "farol": "vermelho"
-        },
-        "desmat": {
-          "antes": "11.594 km²",
-          "sa": "V",
-          "depois": "5.731 km² (2025)",
-          "sd": "V",
-          "farol": "verde"
-        }
-      }
+     "rotulo": "ONU WPP via Banco Mundial",
+     "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=BR"
     }
-  ]
+   ]
+  },
+  {
+   "id": "triplice",
+   "area": "Saúde",
+   "nome": "Vacina contra sarampo, 1ª dose",
+   "fonte": "Cobertura da 1ª dose da vacina contra sarampo em crianças, estimativa OMS/UNICEF (WUENIC) com dados do Ministério da Saúde.",
+   "links": [
+    {
+     "rotulo": "OMS/UNICEF via Banco Mundial",
+     "url": "https://data.worldbank.org/indicator/SH.IMM.MEAS?locations=BR"
+    }
+   ]
+  },
+  {
+   "id": "ideb",
+   "area": "Educação",
+   "nome": "IDEB (iniciais / finais / médio)",
+   "fonte": "INEP. Nota nacional, todas as redes. O IDEB é bienal.",
+   "links": [
+    {
+     "rotulo": "INEP, Ideb",
+     "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb"
+    }
+   ],
+   "nota": "O INEP pediu cautela com o IDEB 2021 por causa da pandemia."
+  },
+  {
+   "id": "mortes_viol",
+   "area": "Segurança",
+   "nome": "Homicídios /100 mil",
+   "fonte": "Homicídios intencionais por 100 mil habitantes, UNODC, com base no SIM/DATASUS.",
+   "links": [
+    {
+     "rotulo": "UNODC via Banco Mundial",
+     "url": "https://data.worldbank.org/indicator/VC.IHR.PSRC.P5?locations=BR"
+    }
+   ],
+   "nota": "É a única série que vai de FHC a Lula 3 com a mesma definição. Termina em 2023."
+  },
+  {
+   "id": "policia",
+   "area": "Segurança",
+   "nome": "Mortes por intervenção policial",
+   "fonte": "Mortes decorrentes de intervenção policial, Anuário Brasileiro de Segurança Pública.",
+   "links": [
+    {
+     "rotulo": "Fórum Brasileiro de Segurança Pública",
+     "url": "https://forumseguranca.org.br/anuario-brasileiro-seguranca-publica/"
+    }
+   ],
+   "nota": "Série nacional começa em 2013."
+  },
+  {
+   "id": "desemprego",
+   "area": "Economia",
+   "nome": "Desemprego",
+   "fonte": "PNAD Contínua do IBGE, 4º trimestre, de Dilma 2 em diante. Antes disso, PME do IBGE (6 regiões metropolitanas, média anual), pesquisa encerrada.",
+   "links": [
+    {
+     "rotulo": "IBGE SIDRA, tabela 4099",
+     "url": "https://sidra.ibge.gov.br/tabela/4099"
+    }
+   ],
+   "nota": "PME e PNAD Contínua são pesquisas diferentes e não devem ser comparadas entre si."
+  },
+  {
+   "id": "informalidade",
+   "area": "Economia",
+   "nome": "Informalidade",
+   "fonte": "Taxa de informalidade da PNAD Contínua, IBGE.",
+   "links": [
+    {
+     "rotulo": "IBGE SIDRA, tabela 8529",
+     "url": "https://sidra.ibge.gov.br/tabela/8529"
+    }
+   ],
+   "nota": "Série começa no 4º trimestre de 2015."
+  },
+  {
+   "id": "pib_pc",
+   "area": "Economia",
+   "nome": "PIB per capita real",
+   "fonte": "PIB per capita em reais constantes, contas nacionais do IBGE.",
+   "links": [
+    {
+     "rotulo": "IBGE via Banco Mundial",
+     "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KN?locations=BR"
+    }
+   ]
+  },
+  {
+   "id": "ipca",
+   "area": "Economia",
+   "nome": "Distância do IPCA até o centro da meta",
+   "fonte": "IPCA acumulado em 12 meses, Banco Central (série SGS 13522), contra o centro da meta definida pelo CMN.",
+   "links": [
+    {
+     "rotulo": "BCB SGS 13522",
+     "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.13522/dados?formato=json"
+    },
+    {
+     "rotulo": "Histórico de metas, BCB",
+     "url": "https://www.bcb.gov.br/controleinflacao/historicometas"
+    }
+   ],
+   "nota": "O regime de metas começa em 1999."
+  },
+  {
+   "id": "fbcf",
+   "area": "Economia",
+   "nome": "Investimento / PIB",
+   "fonte": "Formação bruta de capital fixo sobre o PIB, contas nacionais do IBGE.",
+   "links": [
+    {
+     "rotulo": "IBGE via Banco Mundial",
+     "url": "https://data.worldbank.org/indicator/NE.GDI.FTOT.ZS?locations=BR"
+    }
+   ]
+  },
+  {
+   "id": "renda",
+   "area": "Social",
+   "nome": "Renda domiciliar per capita real",
+   "fonte": "Rendimento médio mensal real domiciliar per capita, PNAD Contínua do IBGE, em reais de 2025.",
+   "links": [
+    {
+     "rotulo": "IBGE SIDRA, tabela 7533",
+     "url": "https://sidra.ibge.gov.br/tabela/7533"
+    }
+   ],
+   "nota": "Série começa em 2012. Antes disso os valores vêm da PNAD anual e ainda estão a confirmar."
+  },
+  {
+   "id": "pobreza",
+   "area": "Social",
+   "nome": "Extrema pobreza (US$ 3,00/dia)",
+   "fonte": "Pessoas vivendo com menos de US$ 3,00 por dia (PPC de 2021), Banco Mundial, com microdados da PNAD e da PNAD Contínua.",
+   "links": [
+    {
+     "rotulo": "Banco Mundial, Poverty and Inequality Platform",
+     "url": "https://pip.worldbank.org/country-profiles/BRA"
+    }
+   ],
+   "nota": "Não houve PNAD em 1994 nem em 2010. Em 2012 a PNAD dá lugar à PNAD Contínua."
+  },
+  {
+   "id": "gini",
+   "area": "Social",
+   "nome": "Índice de Gini",
+   "fonte": "IBGE, PNAD Contínua, a partir de 2012. Antes disso, Banco Mundial com microdados da PNAD anual.",
+   "links": [
+    {
+     "rotulo": "IBGE SIDRA, tabela 7435",
+     "url": "https://sidra.ibge.gov.br/tabela/7435"
+    },
+    {
+     "rotulo": "Banco Mundial, Poverty and Inequality Platform",
+     "url": "https://pip.worldbank.org/country-profiles/BRA"
+    }
+   ]
+  },
+  {
+   "id": "divida",
+   "area": "Fiscal",
+   "nome": "Dívida bruta / PIB",
+   "fonte": "Dívida bruta do governo geral sobre o PIB, Banco Central (série SGS 13762).",
+   "links": [
+    {
+     "rotulo": "BCB SGS 13762",
+     "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados?formato=json"
+    }
+   ],
+   "nota": "Série atual começa em dezembro de 2006."
+  },
+  {
+   "id": "primario",
+   "area": "Fiscal",
+   "nome": "Resultado primário / PIB",
+   "fonte": "Resultado primário do setor público consolidado em 12 meses, sobre o PIB, Banco Central (série SGS 5793, sinal invertido).",
+   "links": [
+    {
+     "rotulo": "BCB SGS 5793",
+     "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.5793/dados?formato=json"
+    }
+   ],
+   "nota": "Série começa em novembro de 2002. Os valores de FHC ainda estão a confirmar."
+  },
+  {
+   "id": "juro",
+   "area": "Fiscal",
+   "nome": "Juro real ~10 anos",
+   "fonte": "Taxa do Tesouro IPCA+ com Juros Semestrais com vencimento mais próximo de 10 anos, no último dia útil do ano.",
+   "links": [
+    {
+     "rotulo": "Tesouro Transparente, histórico do Tesouro Direto",
+     "url": "https://www.tesourotransparente.gov.br/ckan/dataset/taxas-dos-titulos-ofertados-pelo-tesouro-direto"
+    }
+   ],
+   "nota": "Histórico disponível a partir do fim de 2004."
+  },
+  {
+   "id": "desmat",
+   "area": "Ambiente",
+   "nome": "Desmatamento na Amazônia",
+   "fonte": "Taxa anual de corte raso na Amazônia Legal, Prodes do INPE (agosto a julho).",
+   "links": [
+    {
+     "rotulo": "INPE, TerraBrasilis",
+     "url": "https://terrabrasilis.dpi.inpe.br/app/dashboard/deforestation/biomes/legal_amazon/rates"
+    }
+   ]
+  }
+ ],
+ "governos": [
+  {
+   "nome": "Fernando Henrique Cardoso",
+   "mandato": "FHC 1",
+   "periodo": "fim 1994 → fim 1998",
+   "foto": "img/fhc.jpg",
+   "credito": "Agência Brasil, CC BY 3.0 BR",
+   "valores": {
+    "mort_inf": {
+     "antes": "42,4",
+     "sa": "V",
+     "depois": "33,1",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "expect": {
+     "antes": "67,3",
+     "sa": "V",
+     "depois": "68,8",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "triplice": {
+     "antes": "77%",
+     "sa": "V",
+     "depois": "95%",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "ideb": {
+     "antes": "IDEB criado em 2005",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "mortes_viol": {
+     "antes": "18,7",
+     "sa": "V",
+     "depois": "24,8",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "policia": {
+     "antes": "série nacional só começa em 2013",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "desemprego": {
+     "antes": "~5,1%",
+     "sa": "M",
+     "depois": "~7,6%",
+     "sd": "M",
+     "farol": "vermelho",
+     "nome": "Desemprego (PME antiga, 6 metrópoles, média anual)"
+    },
+    "informalidade": {
+     "antes": "série oficial começa no fim de 2015",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "pib_pc": {
+     "antes": "base",
+     "depois": "+4,1%",
+     "sd": "C",
+     "farol": "amarelo"
+    },
+    "ipca": {
+     "antes": "regime de metas começa em 1999",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "fbcf": {
+     "antes": "20,7%",
+     "sa": "V",
+     "depois": "18,5%",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "renda": {
+     "antes": "1993 (não houve PNAD em 1994)",
+     "depois": "≈ +30% real",
+     "sd": "CM",
+     "farol": "verde",
+     "nome": "Renda domiciliar per capita real (PNAD anual)"
+    },
+    "pobreza": {
+     "antes": "28,2% (1993)",
+     "sa": "V",
+     "depois": "19,1% (1998)",
+     "sd": "V",
+     "farol": "verde",
+     "obs": "não houve PNAD em 1994"
+    },
+    "gini": {
+     "antes": "0,601 (1993)",
+     "sa": "V",
+     "depois": "0,596 (1998)",
+     "sd": "V",
+     "farol": "amarelo",
+     "nome": "Índice de Gini (PNAD anual)",
+     "obs": "não houve PNAD em 1994"
+    },
+    "divida": {
+     "antes": "série atual do BC começa em 2006",
+     "depois": "—",
+     "farol": "cinza",
+     "obs": "dívida líquida: ~30% → ~39% do PIB"
+    },
+    "primario": {
+     "antes": "superávit ~5,2%",
+     "sa": "M",
+     "depois": "superávit ~0,0%",
+     "sd": "M",
+     "farol": "vermelho"
+    },
+    "juro": {
+     "antes": "NTN-B só começa a ser emitida em 2000",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "desmat": {
+     "antes": "14.896 km²",
+     "sa": "V",
+     "depois": "17.383 km²",
+     "sd": "V",
+     "farol": "vermelho"
+    }
+   }
+  },
+  {
+   "nome": "Fernando Henrique Cardoso",
+   "mandato": "FHC 2",
+   "periodo": "fim 1998 → fim 2002",
+   "foto": "img/fhc.jpg",
+   "credito": "Agência Brasil, CC BY 3.0 BR",
+   "valores": {
+    "mort_inf": {
+     "antes": "33,1",
+     "sa": "V",
+     "depois": "25,6",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "expect": {
+     "antes": "68,8",
+     "sa": "V",
+     "depois": "70,4",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "triplice": {
+     "antes": "95%",
+     "sa": "V",
+     "depois": "96%",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "ideb": {
+     "antes": "IDEB criado em 2005",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "mortes_viol": {
+     "antes": "24,8",
+     "sa": "V",
+     "depois": "27,8",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "policia": {
+     "antes": "série nacional só começa em 2013",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "desemprego": {
+     "antes": "~7,6%",
+     "sa": "M",
+     "depois": "~7,1%",
+     "sd": "M",
+     "farol": "verde",
+     "nome": "Desemprego (PME antiga, 6 metrópoles, média anual)"
+    },
+    "informalidade": {
+     "antes": "série oficial começa no fim de 2015",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "pib_pc": {
+     "antes": "base",
+     "depois": "+3,8%",
+     "sd": "C",
+     "farol": "amarelo"
+    },
+    "ipca": {
+     "antes": "sem meta em 1998",
+     "depois": "—",
+     "farol": "cinza",
+     "obs": "em 2002: 12,53% contra meta de 3,5%"
+    },
+    "fbcf": {
+     "antes": "18,5%",
+     "sa": "V",
+     "depois": "17,9%",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "renda": {
+     "antes": "base 1998",
+     "depois": "≈ −5% real",
+     "sd": "CM",
+     "farol": "vermelho",
+     "nome": "Renda domiciliar per capita real (PNAD anual)",
+     "obs": "no limiar"
+    },
+    "pobreza": {
+     "antes": "19,1% (1998)",
+     "sa": "V",
+     "depois": "16,2% (2002)",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "gini": {
+     "antes": "0,596 (1998)",
+     "sa": "V",
+     "depois": "0,581 (2002)",
+     "sd": "V",
+     "farol": "amarelo",
+     "nome": "Índice de Gini (PNAD anual)"
+    },
+    "divida": {
+     "antes": "série atual do BC começa em 2006",
+     "depois": "—",
+     "farol": "cinza",
+     "obs": "dívida líquida: ~39% → ~60% do PIB"
+    },
+    "primario": {
+     "antes": "superávit ~0,0%",
+     "sa": "M",
+     "depois": "superávit ~3,2%",
+     "sd": "M",
+     "farol": "verde"
+    },
+    "juro": {
+     "antes": "NTN-B só começa a ser emitida em 2000",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "desmat": {
+     "antes": "17.383 km²",
+     "sa": "V",
+     "depois": "21.650 km²",
+     "sd": "V",
+     "farol": "vermelho"
+    }
+   }
+  },
+  {
+   "nome": "Luiz Inácio Lula da Silva",
+   "mandato": "Lula 1",
+   "periodo": "fim 2002 → fim 2006",
+   "foto": "img/lula1.jpg",
+   "credito": "Lula Oficial, CC BY-SA 4.0",
+   "valores": {
+    "mort_inf": {
+     "antes": "25,6",
+     "sa": "V",
+     "depois": "19,7",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "expect": {
+     "antes": "70,4",
+     "sa": "V",
+     "depois": "72,3",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "triplice": {
+     "antes": "96%",
+     "sa": "V",
+     "depois": "99%",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "ideb": {
+     "antes": "IDEB criado em 2005",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "mortes_viol": {
+     "antes": "27,8",
+     "sa": "V",
+     "depois": "26,3",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "policia": {
+     "antes": "série nacional só começa em 2013",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "desemprego": {
+     "antes": "~11,7% (2002, nova PME)",
+     "sa": "M",
+     "depois": "~10,0%",
+     "sd": "M",
+     "farol": "verde",
+     "nome": "Desemprego (PME, 6 metrópoles, média anual)"
+    },
+    "informalidade": {
+     "antes": "série oficial começa no fim de 2015",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "pib_pc": {
+     "antes": "base",
+     "depois": "+9,8%",
+     "sd": "C",
+     "farol": "verde"
+    },
+    "ipca": {
+     "antes": "12,53% − 3,5 = +9,0 p.p.",
+     "sa": "V",
+     "depois": "3,14% − 4,5 = 1,4 p.p. abaixo",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "fbcf": {
+     "antes": "17,9%",
+     "sa": "V",
+     "depois": "17,2%",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "renda": {
+     "antes": "base 2002",
+     "depois": "≈ +10% real",
+     "sd": "CM",
+     "farol": "verde",
+     "nome": "Renda domiciliar per capita real (PNAD anual)"
+    },
+    "pobreza": {
+     "antes": "16,2% (2002)",
+     "sa": "V",
+     "depois": "11,4% (2006)",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "gini": {
+     "antes": "0,581 (2002)",
+     "sa": "V",
+     "depois": "0,556 (2006)",
+     "sd": "V",
+     "farol": "amarelo",
+     "nome": "Índice de Gini (PNAD anual)"
+    },
+    "divida": {
+     "antes": "série atual do BC começa em 2006",
+     "depois": "—",
+     "farol": "cinza",
+     "obs": "dívida líquida: ~60% → ~47% do PIB"
+    },
+    "primario": {
+     "antes": "superávit 3,2%",
+     "sa": "V",
+     "depois": "superávit 3,1%",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "juro": {
+     "antes": "NTN-B longa pouco negociada antes de 2005",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "desmat": {
+     "antes": "21.650 km²",
+     "sa": "V",
+     "depois": "14.286 km²",
+     "sd": "V",
+     "farol": "verde"
+    }
+   }
+  },
+  {
+   "nome": "Luiz Inácio Lula da Silva",
+   "mandato": "Lula 2",
+   "periodo": "fim 2006 → fim 2010",
+   "foto": "img/lula2.jpg",
+   "credito": "Ricardo Stuckert/PR, CC BY 3.0 BR",
+   "valores": {
+    "mort_inf": {
+     "antes": "19,7",
+     "sa": "V",
+     "depois": "16,0",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "expect": {
+     "antes": "72,3",
+     "sa": "V",
+     "depois": "73,8",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "triplice": {
+     "antes": "99%",
+     "sa": "V",
+     "depois": "99%",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "ideb": {
+     "antes": "3,8 / 3,5 / 3,4 (2005)",
+     "sa": "M",
+     "depois": "4,6 / 4,0 / 3,6 (2009)",
+     "sd": "M",
+     "farol": "verde"
+    },
+    "mortes_viol": {
+     "antes": "26,3",
+     "sa": "V",
+     "depois": "27,0",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "policia": {
+     "antes": "série nacional só começa em 2013",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "desemprego": {
+     "antes": "~10,0%",
+     "sa": "M",
+     "depois": "6,7%",
+     "sd": "M",
+     "farol": "verde",
+     "nome": "Desemprego (PME, 6 metrópoles, média anual)"
+    },
+    "informalidade": {
+     "antes": "série oficial começa no fim de 2015",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "pib_pc": {
+     "antes": "base",
+     "depois": "+15,4%",
+     "sd": "C",
+     "farol": "verde"
+    },
+    "ipca": {
+     "antes": "3,14% − 4,5 = 1,4 p.p. abaixo",
+     "sa": "V",
+     "depois": "5,91% − 4,5 = +1,4 p.p.",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "fbcf": {
+     "antes": "17,2%",
+     "sa": "V",
+     "depois": "20,5%",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "renda": {
+     "antes": "base 2006",
+     "depois": "≈ +9% real (até 2009; não houve PNAD em 2010)",
+     "sd": "CM",
+     "farol": "verde",
+     "nome": "Renda domiciliar per capita real (PNAD anual)"
+    },
+    "pobreza": {
+     "antes": "11,4% (2006)",
+     "sa": "V",
+     "depois": "8,4% (2009)",
+     "sd": "V",
+     "farol": "verde",
+     "obs": "não houve PNAD em 2010"
+    },
+    "gini": {
+     "antes": "0,556 (2006)",
+     "sa": "V",
+     "depois": "0,537 (2009)",
+     "sd": "V",
+     "farol": "amarelo",
+     "nome": "Índice de Gini (PNAD anual)",
+     "obs": "não houve PNAD em 2010"
+    },
+    "divida": {
+     "antes": "55,5%",
+     "sa": "V",
+     "depois": "51,8%",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "primario": {
+     "antes": "superávit 3,1%",
+     "sa": "V",
+     "depois": "superávit 2,6%",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "juro": {
+     "antes": "7,96%",
+     "sa": "V",
+     "depois": "5,95%",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "desmat": {
+     "antes": "14.286 km²",
+     "sa": "V",
+     "depois": "7.000 km²",
+     "sd": "V",
+     "farol": "verde"
+    }
+   }
+  },
+  {
+   "nome": "Dilma Rousseff",
+   "mandato": "Dilma 1",
+   "periodo": "fim 2010 → fim 2014",
+   "foto": "img/dilma.jpg",
+   "credito": "Roberto Stuckert Filho/PR, atribuição",
+   "valores": {
+    "mort_inf": {
+     "antes": "16,0",
+     "sa": "V",
+     "depois": "14,0",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "expect": {
+     "antes": "73,8",
+     "sa": "V",
+     "depois": "74,8",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "triplice": {
+     "antes": "99%",
+     "sa": "V",
+     "depois": "97%",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "ideb": {
+     "antes": "4,6 / 4,0 / 3,6 (2009)",
+     "sa": "M",
+     "depois": "5,2 / 4,2 / 3,7 (2013)",
+     "sd": "M",
+     "farol": "verde"
+    },
+    "mortes_viol": {
+     "antes": "27,0",
+     "sa": "V",
+     "depois": "29,9",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "policia": {
+     "antes": "série nacional só começa em 2013",
+     "depois": "3.022 (2014)",
+     "sd": "V",
+     "farol": "cinza"
+    },
+    "desemprego": {
+     "nome": "Desemprego (PME, 6 metrópoles, média anual)",
+     "antes": "6,7%",
+     "sa": "M",
+     "depois": "4,8%",
+     "sd": "M",
+     "farol": "verde"
+    },
+    "informalidade": {
+     "antes": "série oficial começa depois",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "pib_pc": {
+     "antes": "base",
+     "depois": "+6,2%",
+     "sd": "C",
+     "farol": "verde"
+    },
+    "ipca": {
+     "antes": "5,91% − 4,5 = +1,4 p.p.",
+     "sa": "V",
+     "depois": "6,41% − 4,5 = +1,9 p.p.",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "fbcf": {
+     "antes": "20,5%",
+     "sa": "V",
+     "depois": "19,9%",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "renda": {
+     "antes": "R$ 1.782 (2012)",
+     "sa": "V",
+     "depois": "R$ 1.891 (2014)",
+     "sd": "V",
+     "farol": "verde",
+     "nome": "Renda domiciliar per capita real (R$ de 2025)",
+     "obs": "PNAD Contínua começa em 2012"
+    },
+    "pobreza": {
+     "antes": "6,4% (2012)",
+     "sa": "V",
+     "depois": "4,8% (2014)",
+     "sd": "V",
+     "farol": "verde",
+     "obs": "troca de pesquisa: PNAD Contínua a partir de 2012"
+    },
+    "gini": {
+     "antes": "0,540 (2012)",
+     "sa": "V",
+     "depois": "0,526 (2014)",
+     "sd": "V",
+     "farol": "amarelo",
+     "nome": "Índice de Gini (PNAD Contínua)"
+    },
+    "divida": {
+     "antes": "51,8%",
+     "sa": "V",
+     "depois": "56,3%",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "primario": {
+     "antes": "superávit 2,6%",
+     "sa": "V",
+     "depois": "déficit 0,6%",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "juro": {
+     "antes": "5,95%",
+     "sa": "V",
+     "depois": "6,18%",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "desmat": {
+     "antes": "7.000 km²",
+     "sa": "V",
+     "depois": "5.012 km²",
+     "sd": "V",
+     "farol": "verde"
+    }
+   }
+  },
+  {
+   "nome": "Dilma Rousseff",
+   "mandato": "Dilma 2",
+   "periodo": "fim 2014 → fim 2015 (afastada em mai/2016)",
+   "foto": "img/dilma.jpg",
+   "credito": "Roberto Stuckert Filho/PR, atribuição",
+   "valores": {
+    "mort_inf": {
+     "antes": "14,0",
+     "sa": "V",
+     "depois": "13,7",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "expect": {
+     "antes": "74,8",
+     "sa": "V",
+     "depois": "75,1",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "triplice": {
+     "antes": "97%",
+     "sa": "V",
+     "depois": "96%",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "ideb": {
+     "antes": "5,2 / 4,2 / 3,7 (2013)",
+     "sa": "M",
+     "depois": "5,5 / 4,5 / 3,7 (2015)",
+     "sd": "M",
+     "farol": "amarelo"
+    },
+    "mortes_viol": {
+     "antes": "29,9",
+     "sa": "V",
+     "depois": "28,9",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "policia": {
+     "antes": "3.022",
+     "sa": "V",
+     "depois": "~3.345",
+     "sd": "M",
+     "farol": "vermelho"
+    },
+    "desemprego": {
+     "antes": "6,6% (4º tri 2014)",
+     "sa": "V",
+     "depois": "9,1% (4º tri 2015)",
+     "sd": "V",
+     "farol": "vermelho",
+     "nome": "Desemprego (PNAD Contínua, 4º tri)"
+    },
+    "informalidade": {
+     "antes": "série oficial começa no fim de 2015",
+     "depois": "—",
+     "farol": "cinza"
+    },
+    "pib_pc": {
+     "antes": "base",
+     "depois": "−4,3%",
+     "sd": "C",
+     "farol": "amarelo"
+    },
+    "ipca": {
+     "antes": "6,41% − 4,5 = +1,9 p.p.",
+     "sa": "V",
+     "depois": "10,67% − 4,5 = +6,2 p.p.",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "fbcf": {
+     "antes": "19,9%",
+     "sa": "V",
+     "depois": "17,8%",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "renda": {
+     "antes": "R$ 1.891 (2014)",
+     "sa": "V",
+     "depois": "R$ 1.830 (2015)",
+     "sd": "V",
+     "farol": "amarelo",
+     "nome": "Renda domiciliar per capita real (R$ de 2025)"
+    },
+    "pobreza": {
+     "antes": "4,8% (2014)",
+     "sa": "V",
+     "depois": "5,4% (2015)",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "gini": {
+     "antes": "0,526 (2014)",
+     "sa": "V",
+     "depois": "0,524 (2015)",
+     "sd": "V",
+     "farol": "amarelo",
+     "nome": "Índice de Gini (PNAD Contínua)"
+    },
+    "divida": {
+     "antes": "56,3%",
+     "sa": "V",
+     "depois": "65,5%",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "primario": {
+     "antes": "déficit 0,6%",
+     "sa": "V",
+     "depois": "déficit 1,9%",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "juro": {
+     "antes": "6,18%",
+     "sa": "V",
+     "depois": "7,38%",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "desmat": {
+     "antes": "5.012 km²",
+     "sa": "V",
+     "depois": "6.207 km²",
+     "sd": "V",
+     "farol": "vermelho"
+    }
+   }
+  },
+  {
+   "nome": "Michel Temer",
+   "mandato": "Temer",
+   "periodo": "fim 2015 → fim 2018 (posse em mai/2016)",
+   "foto": "img/temer.jpg",
+   "credito": "Beto Barata/PR, CC BY 2.0",
+   "valores": {
+    "mort_inf": {
+     "antes": "13,7",
+     "sa": "V",
+     "depois": "13,1",
+     "sd": "V",
+     "farol": "amarelo",
+     "obs": "pelas tábuas do IBGE (13,8 → 12,4) a queda passa de 5% e fica verde"
+    },
+    "expect": {
+     "antes": "75,1",
+     "sa": "V",
+     "depois": "75,6",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "triplice": {
+     "antes": "96%",
+     "sa": "V",
+     "depois": "92%",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "ideb": {
+     "antes": "5,5 / 4,5 / 3,7 (2015)",
+     "sa": "M",
+     "depois": "5,8 / 4,7 / 3,8 (2017)",
+     "sd": "M",
+     "farol": "amarelo"
+    },
+    "mortes_viol": {
+     "antes": "28,9",
+     "sa": "V",
+     "depois": "27,2",
+     "sd": "V",
+     "farol": "verde",
+     "obs": "antes amarelo; na série única do SIM a queda é de 5,9%"
+    },
+    "policia": {
+     "antes": "~3.345",
+     "sa": "M",
+     "depois": "6.220",
+     "sd": "M",
+     "farol": "vermelho"
+    },
+    "desemprego": {
+     "antes": "9,1% (4º tri 2015)",
+     "sa": "V",
+     "depois": "11,7% (4º tri 2018)",
+     "sd": "V",
+     "farol": "vermelho",
+     "nome": "Desemprego (PNAD Contínua, 4º tri)"
+    },
+    "informalidade": {
+     "antes": "38,3% (4º tri 2015)",
+     "sa": "V",
+     "depois": "40,8% (4º tri 2018)",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "pib_pc": {
+     "antes": "base",
+     "depois": "−2,4%",
+     "sd": "C",
+     "farol": "amarelo"
+    },
+    "ipca": {
+     "antes": "10,67% − 4,5 = +6,2 p.p.",
+     "sa": "V",
+     "depois": "3,75% − 4,5 = 0,75 p.p. abaixo",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "fbcf": {
+     "antes": "17,8%",
+     "sa": "V",
+     "depois": "15,1%",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "renda": {
+     "antes": "R$ 1.830 (2015)",
+     "sa": "V",
+     "depois": "R$ 1.879 (2018)",
+     "sd": "V",
+     "farol": "amarelo",
+     "nome": "Renda domiciliar per capita real (R$ de 2025)"
+    },
+    "pobreza": {
+     "antes": "5,4% (2015)",
+     "sa": "V",
+     "depois": "6,9% (2018)",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "gini": {
+     "antes": "0,524 (2015)",
+     "sa": "V",
+     "depois": "0,545 (2018)",
+     "sd": "V",
+     "farol": "amarelo",
+     "nome": "Índice de Gini (PNAD Contínua)"
+    },
+    "divida": {
+     "antes": "65,5%",
+     "sa": "V",
+     "depois": "75,3%",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "primario": {
+     "antes": "déficit 1,9%",
+     "sa": "V",
+     "depois": "déficit 1,6%",
+     "sd": "V",
+     "farol": "verde",
+     "obs": "melhora de 0,3 p.p. vira verde pela regra dos 5%"
+    },
+    "juro": {
+     "antes": "7,38%",
+     "sa": "V",
+     "depois": "4,66%",
+     "sd": "V",
+     "farol": "verde",
+     "obs": "em 2018 o título mais próximo de 10 anos vencia em 2026 (7,6 anos)"
+    },
+    "desmat": {
+     "antes": "6.207 km²",
+     "sa": "V",
+     "depois": "7.536 km²",
+     "sd": "V",
+     "farol": "vermelho"
+    }
+   }
+  },
+  {
+   "nome": "Jair Bolsonaro",
+   "mandato": "Bolsonaro",
+   "periodo": "fim 2018 → fim 2022",
+   "foto": "img/bolsonaro.jpg",
+   "credito": "Isac Nóbrega/PR, CC BY 2.0",
+   "valores": {
+    "mort_inf": {
+     "antes": "13,1",
+     "sa": "V",
+     "depois": "12,6",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "expect": {
+     "antes": "75,6",
+     "sa": "V",
+     "depois": "74,9",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "triplice": {
+     "antes": "92%",
+     "sa": "V",
+     "depois": "81%",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "ideb": {
+     "antes": "5,8 / 4,7 / 3,8 (2017)",
+     "sa": "M",
+     "depois": "5,8 / 5,1 / 4,2 (2021)",
+     "sd": "M",
+     "farol": "verde"
+    },
+    "mortes_viol": {
+     "antes": "27,2",
+     "sa": "V",
+     "depois": "20,1",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "policia": {
+     "antes": "6.220",
+     "sa": "M",
+     "depois": "6.429",
+     "sd": "M",
+     "farol": "amarelo"
+    },
+    "desemprego": {
+     "antes": "11,7% (4º tri 2018)",
+     "sa": "V",
+     "depois": "7,9% (4º tri 2022)",
+     "sd": "V",
+     "farol": "verde",
+     "nome": "Desemprego (PNAD Contínua, 4º tri)"
+    },
+    "informalidade": {
+     "antes": "40,8% (4º tri 2018)",
+     "sa": "V",
+     "depois": "38,9% (4º tri 2022)",
+     "sd": "V",
+     "farol": "amarelo",
+     "obs": "antes verde com ~41%; com o dado oficial (40,8%) a queda é de 4,7%"
+    },
+    "pib_pc": {
+     "antes": "base",
+     "depois": "+3,6%",
+     "sd": "C",
+     "farol": "amarelo"
+    },
+    "ipca": {
+     "antes": "3,75% − 4,5 = 0,75 p.p. abaixo",
+     "sa": "V",
+     "depois": "5,79% − 3,5 = +2,3 p.p.",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "fbcf": {
+     "antes": "15,1%",
+     "sa": "V",
+     "depois": "17,8%",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "renda": {
+     "antes": "R$ 1.879 (2018)",
+     "sa": "V",
+     "depois": "R$ 1.809 (2022)",
+     "sd": "V",
+     "farol": "amarelo",
+     "nome": "Renda domiciliar per capita real (R$ de 2025)",
+     "obs": "antes cinza; a série do IBGE é contínua de 2012 a 2025"
+    },
+    "pobreza": {
+     "antes": "6,9% (2018)",
+     "sa": "V",
+     "depois": "4,9% (2022)",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "gini": {
+     "antes": "0,545 (2018)",
+     "sa": "V",
+     "depois": "0,517 (2022)",
+     "sd": "V",
+     "farol": "verde",
+     "nome": "Índice de Gini (PNAD Contínua)",
+     "obs": "IBGE revisou 2022 de 0,518 para 0,517; a queda passa de 4,95% para 5,1% e a cor muda por um triz"
+    },
+    "divida": {
+     "antes": "75,3%",
+     "sa": "V",
+     "depois": "71,7%",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "primario": {
+     "antes": "déficit 1,6%",
+     "sa": "V",
+     "depois": "superávit 1,2%",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "juro": {
+     "antes": "4,66%",
+     "sa": "V",
+     "depois": "6,12%",
+     "sd": "V",
+     "farol": "vermelho",
+     "obs": "em 2018 o título mais próximo de 10 anos vencia em 2026 (7,6 anos)"
+    },
+    "desmat": {
+     "antes": "7.536 km²",
+     "sa": "V",
+     "depois": "11.594 km²",
+     "sd": "V",
+     "farol": "vermelho"
+    }
+   }
+  },
+  {
+   "nome": "Luiz Inácio Lula da Silva",
+   "mandato": "Lula 3",
+   "periodo": "fim 2022 → 2026 (em curso)",
+   "foto": "img/lula.jpg",
+   "credito": "Ricardo Stuckert/PR, CC BY 2.0",
+   "valores": {
+    "mort_inf": {
+     "antes": "12,6",
+     "sa": "V",
+     "depois": "12,3 (2024)",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "expect": {
+     "antes": "74,9",
+     "sa": "V",
+     "depois": "76,0 (2024)",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "triplice": {
+     "antes": "81%",
+     "sa": "V",
+     "depois": "93% (2024)",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "ideb": {
+     "antes": "5,8 / 5,1 / 4,2 (2021)",
+     "sa": "M",
+     "depois": "6,3 / 5,3 / 4,5 (2025)",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "mortes_viol": {
+     "antes": "20,1",
+     "sa": "V",
+     "depois": "19,3 (2023)",
+     "sd": "V",
+     "farol": "amarelo",
+     "obs": "série internacional vai até 2023; pelo Fórum de Segurança (MVI) a taxa caiu de 23,3 para 19,1 entre 2022 e 2025"
+    },
+    "policia": {
+     "antes": "6.429",
+     "sa": "M",
+     "depois": "6.602 (2025)",
+     "sd": "V",
+     "farol": "amarelo",
+     "obs": "6.237 em 2024; 2025 é o maior da série do Fórum"
+    },
+    "desemprego": {
+     "antes": "7,9% (4º tri 2022)",
+     "sa": "V",
+     "depois": "5,4% (2º tri 2026)",
+     "sd": "V",
+     "farol": "verde",
+     "nome": "Desemprego (PNAD Contínua, 4º tri)"
+    },
+    "informalidade": {
+     "antes": "38,9% (4º tri 2022)",
+     "sa": "V",
+     "depois": "37,4% (2º tri 2026)",
+     "sd": "V",
+     "farol": "amarelo"
+    },
+    "pib_pc": {
+     "antes": "base",
+     "depois": "+7,9% (2022→2025)",
+     "sd": "C",
+     "farol": "verde"
+    },
+    "ipca": {
+     "antes": "5,79% − 3,5 = +2,3 p.p.",
+     "sa": "V",
+     "depois": "4,22% − 3,0 = +1,2 p.p. (12m até ago/2026)",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "fbcf": {
+     "antes": "17,8%",
+     "sa": "V",
+     "depois": "16,8% (2025)",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "renda": {
+     "antes": "R$ 1.809 (2022)",
+     "sa": "V",
+     "depois": "R$ 2.264 (2025)",
+     "sd": "V",
+     "farol": "verde",
+     "nome": "Renda domiciliar per capita real (R$ de 2025)"
+    },
+    "pobreza": {
+     "antes": "4,9% (2022)",
+     "sa": "V",
+     "depois": "3,0% (2024)",
+     "sd": "V",
+     "farol": "verde"
+    },
+    "gini": {
+     "antes": "0,517 (2022)",
+     "sa": "V",
+     "depois": "0,511 (2025)",
+     "sd": "V",
+     "farol": "amarelo",
+     "nome": "Índice de Gini (PNAD Contínua)",
+     "obs": "em 2024 chegou a 0,504, o menor da série"
+    },
+    "divida": {
+     "antes": "71,7%",
+     "sa": "V",
+     "depois": "82,9% (ago/2026)",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "primario": {
+     "antes": "superávit 1,2%",
+     "sa": "V",
+     "depois": "déficit 0,6% (12m até ago/2026)",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "juro": {
+     "antes": "6,12%",
+     "sa": "V",
+     "depois": "7,07% (out/2026)",
+     "sd": "V",
+     "farol": "vermelho"
+    },
+    "desmat": {
+     "antes": "11.594 km²",
+     "sa": "V",
+     "depois": "5.796 km² (2025)",
+     "sd": "V",
+     "farol": "verde",
+     "obs": "2024: 6.518 km² (consolidado)"
+    }
+   }
+  }
+ ]
 }
