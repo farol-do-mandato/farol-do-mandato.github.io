@@ -49,6 +49,21 @@
     .vermelho { background: var(--vermelho); } .cinza { background: var(--cinza); }
     .mark { color: var(--amarelo); font-weight: 700; margin-left: 1px; }
     .obs { font-style: italic; }
+    a { color: #9ec5ff; }
+    a:focus-visible { outline: 2px solid #9ec5ff; outline-offset: 2px; border-radius: 3px; }
+    .ref { font-size: .7em; vertical-align: super; line-height: 0; margin-left: 3px; color: var(--muted);
+           text-decoration: none; font-weight: 500; }
+    .ref:hover { color: var(--fg); text-decoration: underline; }
+    .fontes { max-width: 760px; margin: 0 auto; padding: 8px 16px 64px; color: #c3c8d1; }
+    .fontes h2 { font-size: 1.25rem; margin: 0 0 6px; color: var(--fg); }
+    .fontes > p { margin: 0 0 14px; }
+    .fontes ol { margin: 0; padding-left: 1.6em; }
+    .fontes li { padding: 8px 10px; margin-left: -10px; border-radius: 8px; scroll-margin-top: 16px; }
+    .fontes li:target { background: var(--surface); }
+    .fontes li b { color: var(--fg); font-weight: 550; }
+    .fontes .links, .fontes .nota { display: block; font-size: .9rem; }
+    .fontes .nota { color: var(--muted); }
+    .fontes .aviso { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
   </style>
 </head>
 <body>
@@ -62,8 +77,9 @@
     </div>
     <div class="sobre">
       <p>Cada coluna é um mandato presidencial. Para cada um, comparamos 18 indicadores de fontes oficiais
-        (IBGE, Banco Central, INEP, INPE, DATASUS e outras) entre o fim do ano anterior à posse e o fim do mandato.
-        As métricas e as regras foram fixadas antes de olhar os resultados e valem igualmente para todos os governos, de FHC a Lula 3.</p>
+        (IBGE, Banco Central, Tesouro, INEP, INPE, Fórum Brasileiro de Segurança Pública e séries harmonizadas da ONU
+        e do Banco Mundial) entre o fim do ano anterior à posse e o fim do mandato. As métricas e as regras são as mesmas
+        para todos os governos, de FHC a Lula 3. O número ao lado de cada indicador leva à <a href="#fontes">fonte e ao método</a>.</p>
       <p>A cor mostra o que aconteceu com cada indicador no período. Para a inflação, conta a distância até o centro
         da meta. Cada ano conta para quem governou a maior parte dele: Dilma 2 vai até o fim de 2015 e Temer começa em 2016.
         Nos mandatos mais antigos, várias séries ainda não existiam e aparecem em cinza. O mandato de Lula 3 está
@@ -75,13 +91,15 @@
       <span><i class="dot amarelo"></i> variou menos de 5%</span>
       <span><i class="dot vermelho"></i> piorou 5% ou mais</span>
       <span><i class="dot cinza"></i> sem dado comparável</span>
-      <span><span class="mark">†</span> valor de memória, a confirmar na fonte oficial</span>
+      <span><span class="mark">†</span> valor ainda a confirmar na fonte oficial</span>
       <span><span class="mark">‡</span> cálculo próprio</span>
     </div>
   </header>
   <div class="scroll"><main class="board" id="board"></main></div>
+  <section class="fontes" id="fontes" aria-labelledby="fontes-titulo"></section>
   <script>
     fetch('data.json').then(r => r.json()).then(d => {
+      const num = Object.fromEntries(d.metricas.map((m, i) => [m.id, i + 1]));
       const marca = s => (s || '').replace(/[^CM]/g, '').replace('C', '<span class="mark">‡</span>').replace('M', '<span class="mark">†</span>');
       const cab = d.governos.map(g => {
         const n = { verde: 0, amarelo: 0, vermelho: 0 };
@@ -100,7 +118,7 @@
         ${d.metricas.filter(m => m.area === a).map(m => {
           const v = g.valores[m.id];
           return `<div class="m">
-            <span class="nome">${v.nome || m.nome}</span>
+            <span class="nome">${v.nome || m.nome}<a class="ref" href="#f-${m.id}" aria-label="Fonte: ${m.nome}">${num[m.id]}</a></span>
             <i class="dot ${v.farol}" role="img" aria-label="${v.farol}"></i>
             <span class="val">${v.antes}${marca(v.sa)} → <b>${v.depois}</b>${marca(v.sd)}${v.obs ? ` <span class="obs">(${v.obs})</span>` : ''}</span>
           </div>`;
@@ -110,6 +128,16 @@
       board.style.gridTemplateColumns = `repeat(${d.governos.length}, 260px)`;
       board.innerHTML = cab.join('') + tiles.join('');
       document.getElementById('data').textContent = `Dados levantados em ${d.levantamento}.`;
+      document.getElementById('fontes').innerHTML = `<h2 id="fontes-titulo">Fontes e método</h2>
+        <p>Cada indicador usa a mesma série em todos os mandatos. Quando a série muda no meio do caminho,
+          o nome do indicador e a nota abaixo avisam.</p>
+        <ol>${d.metricas.map(m => `<li id="f-${m.id}"><b>${m.nome}</b> (${m.area}). ${m.fonte}
+          <span class="links">${(m.links || []).map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.rotulo}</a>`).join(', ')}</span>
+          ${m.nota ? `<span class="nota">${m.nota}</span>` : ''}</li>`).join('')}</ol>
+        <p class="aviso">Cada cor é a variação de uma série oficial entre duas datas. Nenhuma cor mede o que o governo
+          causou, e nenhuma substitui a leitura do contexto de cada período.</p>`;
+      const alvo = location.hash && document.getElementById(location.hash.slice(1));
+      if (alvo) alvo.scrollIntoView();
     });
   </script>
 </body>
